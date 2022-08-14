@@ -1,0 +1,55 @@
+﻿<%- include ('header') -%>
+
+<title>F1</title>
+<div class="header">F1</div>
+<table>
+	<tr>
+		<th>Team name</th>
+		<th>Team size</th>
+		<th>Founder</th>
+		<th>Crew</th>
+		<th class="options">Options</th>
+	</tr>
+	<% teams.forEach(function(teamElem){ %>
+		<tr>
+			<td>
+				<%= teamElem.name %>
+			</td>
+			<td>
+				<%= teamElem.size %>
+			</td>
+			<td>
+				<%= teamElem.Founder %>
+			</td>
+			<td>
+				<a href="/teammate/<%= teamElem._id %> ">
+					<button>
+						Crew
+					</button>
+				</a>
+			</td>
+			<td>
+			<a href="/team/del/<%= teamElem._id %> ">
+				<button>
+						D
+				</button>
+			</a>
+			<a href="/team/edit/<%= teamElem._id %> ">
+				<button>
+						E
+				</button>
+			</a>
+			
+
+			</td>
+		</tr>
+		<% }); %>
+</table>
+	<a href="/team/new" style="margin-left: 84%">
+		<button  style="width: 6%">
+			Add new
+		</button>
+	</a>
+
+
+<%- include ('footer') -%>

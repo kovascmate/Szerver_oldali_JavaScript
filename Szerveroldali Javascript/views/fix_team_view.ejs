@@ -1,0 +1,53 @@
+<%- include ('header') -%>
+	
+	<title><%= team.name %></title>
+	<div class="header">
+		<%= team.name %>
+	</div>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Role</th>
+			<th>Active</th>
+			<th class="options">Options</th>
+		</tr>
+		
+		<% mates.forEach(function(Egyteammate){ %>
+		<tr>
+			<td>
+				<%= Egyteammate.name %>
+			</td>
+			<td>
+				<%= Egyteammate.role %>
+			</td>
+			<td>
+				<%= Egyteammate.active %>
+			</td>
+		<td>
+			<a href="/teammate/<%=team._id%>/edit/<%=Egyteammate._id%>">
+			<button>
+				E
+			</button>
+			</a>
+			<a href="/teammate/<%=team._id%>/del/<%=Egyteammate._id%>">
+			<button>
+				D
+			</button>
+			</a>
+		</td>
+		<% }); %>
+		</tr>
+	</table>
+	<a href="/teammate/<%= team._id%>/new" style="margin-left: 84%">
+		<button  style="width: 6%">
+			Add new
+		</button>
+	</a>
+	<div></div>
+	<a href="/">
+		<button  class="vissza">
+			Back
+		</button>
+	</a>
+
+<%- include ('footer') -%>

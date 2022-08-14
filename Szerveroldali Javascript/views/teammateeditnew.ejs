@@ -1,0 +1,56 @@
+<%- include ('header') -%>
+
+	
+	<title>Edit Teammate</title>
+	<div class="header">Edit Teammate</div>
+	<table class="new">
+		<tr>
+<form method="POST">
+			<td style="border-top:none">
+				Name
+			</td>
+			<td class="input" style="border-top:none">
+				<input type="text" id="name" name="name" class="form-control"
+				value="<%= (typeof mate === 'undefined') ? '' : mate.name %>">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Role
+			</td>
+			<td class="input">
+				<input type="text" id="role" name="role" class="form-control"
+				value="<%= (typeof mate === 'undefined') ? '' : mate.role %>">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Active
+			</td>
+			<td class="input">
+				<input type="text" id="active" name="active" class="form-control"
+				value="<%= (typeof mate === 'undefined') ? '' : mate.active %>">
+			</td>
+		</tr>	
+	</table>
+	<div>
+	<a href="/">
+		<button class="add" type="submit">
+			Save
+		</button>
+	</a>
+		</div>
+	
+	</form>
+	<div>
+		<a href="/">
+			<button class="vissza">
+				Back
+			</button>
+		</a>
+	</div>
+
+	
+
+<%- include ('footer') -%>
